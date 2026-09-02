@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protosun Solutions LLC — Counter-UAS Threat Emulation Systems</title>
+<meta name="description" content="Protosun Solutions builds counter-UAS threat emulation systems: expendable target surrogates, automated launch systems, and self-hosted ground software. Service-Disabled Veteran-Owned Small Business, York, Pennsylvania.">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta property="og:title" content="Protosun Solutions LLC">
+<meta property="og:description" content="Counter-UAS threat emulation systems. Expendable target surrogates, automated launch, self-hosted ground software.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --navy:#142D63; --gold:#C99C3F; --ink:#0A1836; --mid:#1D3B79;
+    --pale:#CFD9EC; --paper:#FBFCFE; --body:#3A4560; --mute:#7E8AA3; --hair:#DDE3EF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--body); background:var(--paper); line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.2}
+
+  /* header */
+  header{background:var(--ink);padding:22px 0;position:sticky;top:0;z-index:50;
+    border-bottom:1px solid rgba(255,255,255,.07)}
+  .navrow{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  header img{height:30px;display:block}
+  nav a{color:var(--pale);text-decoration:none;font-size:.86rem;margin-left:26px;
+    letter-spacing:.04em;transition:color .18s}
+  nav a:hover{color:var(--gold)}
+
+  /* hero */
+  .hero{background:var(--ink);color:#fff;padding:96px 0 104px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-140px;top:-160px;width:520px;height:520px;
+    border-radius:50%;background:var(--mid);opacity:.32}
+  .hero-inner{position:relative;z-index:2;max-width:720px}
+  .eyebrow{color:var(--gold);font-size:.76rem;font-weight:700;letter-spacing:.22em;margin-bottom:20px}
+  .hero h1{color:#fff;font-size:clamp(2.2rem,5.2vw,3.5rem);margin-bottom:24px}
+  .hero h1 em{color:var(--gold);font-style:normal}
+  .hero p{color:var(--pale);font-size:1.12rem;max-width:600px}
+  .badges{margin-top:40px;display:flex;gap:34px;flex-wrap:wrap}
+  .badge b{display:block;color:var(--gold);font-size:.95rem;letter-spacing:.06em}
+  .badge span{color:var(--mute);font-size:.82rem}
+
+  /* sections */
+  section{padding:84px 0}
+  section.alt{background:#fff;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+  .label{color:var(--gold);font-size:.74rem;font-weight:700;letter-spacing:.2em;margin-bottom:14px}
+  section h2{font-size:clamp(1.6rem,3.2vw,2.1rem);margin-bottom:20px;max-width:760px}
+  .lede{font-size:1.06rem;max-width:720px;margin-bottom:44px}
+
+  .grid{display:grid;gap:26px}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+
+  .card{background:#fff;border:1px solid var(--hair);border-radius:8px;padding:26px}
+  section.alt .card{background:var(--paper)}
+  .card h3{font-size:1.12rem;margin-bottom:10px}
+  .card p{font-size:.93rem}
+  .card .num{color:var(--gold);font-weight:700;font-size:.82rem;letter-spacing:.1em;margin-bottom:10px}
+
+  .seg{background:var(--ink);color:#fff;border-radius:8px;padding:26px}
+  .seg .k{color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:.16em;margin-bottom:8px}
+  .seg h3{color:#fff;font-size:1.35rem;margin-bottom:10px}
+  .seg p{color:var(--pale);font-size:.9rem}
+
+  ul.ticks{list-style:none;max-width:760px}
+  ul.ticks li{padding-left:26px;position:relative;margin-bottom:14px;font-size:.98rem}
+  ul.ticks li::before{content:"";position:absolute;left:0;top:.55em;width:9px;height:9px;
+    border-radius:50%;background:var(--gold)}
+
+  .strip{background:var(--navy);color:#fff;padding:30px;border-radius:8px;margin-top:44px}
+  .strip p{color:#fff;font-size:1.02rem;margin:0}
+  .strip b{color:var(--gold)}
+
+  /* contact */
+  .contact{background:var(--ink);color:#fff;padding:84px 0}
+  .contact h2{color:#fff}
+  .contact .lede{color:var(--pale)}
+  .cgrid{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:36px}
+  .cgrid h4{color:var(--gold);font-size:.74rem;letter-spacing:.16em;margin-bottom:10px;font-weight:700}
+  .cgrid p,.cgrid a{color:var(--pale);font-size:.95rem;text-decoration:none;display:block}
+  .cgrid a:hover{color:var(--gold)}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88rem;letter-spacing:.02em}
+
+  footer{background:#06101f;color:var(--mute);padding:30px 0;font-size:.8rem}
+  .footrow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media(max-width:640px){
+    nav{display:none}
+    .hero{padding:64px 0 72px}
+    section{padding:60px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap navrow">
+    <img src="wordmark-light.png" alt="Protosun Solutions">
+    <nav>
+      <a href="#what">What We Do</a>
+      <a href="#system">The System</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">COUNTER-UAS THREAT EMULATION</div>
+    <h1>Something <em>to shoot at.</em></h1>
+    <p>Expendable target surrogates, launched by the stack, with nobody on the sticks —
+       running entirely on your network.</p>
+    <div class="badges">
+      <div class="badge"><b>NO PILOT</b><span>in the loop</span></div>
+      <div class="badge"><b>SALVO</b><span>not sorties</span></div>
+      <div class="badge"><b>NO CLOUD</b><span>ever</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="what">
+  <div class="wrap">
+    <div class="label">THE PROBLEM</div>
+    <h2>Red teams already fly the right aircraft. Flying them is the problem.</h2>
+    <p class="lede">Commercial RC platforms are what the threat actually is — the fidelity is correct.
+      Everything around flying them is what limits how much testing a program can run.</p>
+
+    <div class="grid g2">
+      <div class="card">
+        <div class="num">01</div>
+        <h3>A pilot and observer per aircraft</h3>
+        <p>Every airframe in the air needs two people. Multiply by travel, equipment prep, and the
+           hours spent coordinating a pilot team across a test window.</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3>The profile flown isn't the profile designed</h3>
+        <p>Communication gaps mean aircraft fly paths the test officer didn't ask for — and often
+           the test officer can't verify what was actually flown.</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3>One airframe, one signature at a time</h3>
+        <p>A single event may need several different RF signatures presented. Today that means
+           different aircraft, or reconfiguration between sorties.</p>
+      </div>
+      <div class="card">
+        <div class="num">04</div>
+        <h3>Salvo testing is close to impossible</h3>
+        <p>Six aircraft means six pilots, six observers, and a deconfliction plan nobody has time
+           to write. So defeat systems get evaluated one target at a time.</p>
+      </div>
+    </div>
+
+    <div class="strip">
+      <p><b>Support cost</b> — crews, travel, coordination, airspace time — decides how much testing
+         a program can actually run. Not the price of the airframe.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="system">
+  <div class="wrap">
+    <div class="label">THE SYSTEM</div>
+    <h2>Four parts. One network. Yours.</h2>
+    <p class="lede">An integrated system rather than an airframe. The target aircraft are consumable;
+      the capability is everything around them.</p>
+
+    <div class="grid g4">
+      <div class="seg" style="background:var(--paper);border:1px solid var(--hair)">
+        <div class="k" style="color:var(--mute)">ABOARD</div>
+        <h3 style="color:var(--navy)">Onboard Autonomy</h3>
+        <p style="color:var(--body)">Preloaded flight profiles, quick-swap radio bay, and a
+          field-swappable communications module.</p>
+      </div>
+      <div class="seg">
+        <div class="k">LAUNCH</div>
+        <h3>Launch System</h3>
+        <p>Vertical pneumatic magazine on a small footprint. Deployable and unattended. Releases one
+           aircraft, a partial salvo, or the full stack on a single command.</p>
+      </div>
+      <div class="seg" style="background:var(--paper);border:1px solid var(--hair)">
+        <div class="k" style="color:var(--mute)">DATA</div>
+        <h3 style="color:var(--navy)">Platform Server</h3>
+        <p style="color:var(--body)">Hosted on your hardware and your network. Holds every piece of
+          state and brokers every message.</p>
+      </div>
+      <div class="seg" style="background:var(--paper);border:1px solid var(--hair)">
+        <div class="k" style="color:var(--mute)">CONTROL</div>
+        <h3 style="color:var(--navy)">Operator Interface</h3>
+        <p style="color:var(--body)">Browser-based fleet and magazine management — inventory,
+          readiness, faults, and tasking across every rack and site.</p>
+      </div>
+    </div>
+
+    <div class="strip">
+      <p><b>Nothing phones home.</b> No vendor cloud to accredit, no external dependency in a degraded
+         environment, and no question about where your test data went.</p>
+    </div>
+  </div>
+</section>
+
+<section id="capabilities">
+  <div class="wrap">
+    <div class="label">CAPABILITIES</div>
+    <h2>What we deliver</h2>
+    <ul class="ticks">
+      <li><strong>Target surrogate aircraft</strong> — Group 1 fixed-wing, expendable by design, with a
+        quick-swap avionics bay and field-swappable communications module.</li>
+      <li><strong>Automated launch systems</strong> — single, partial salvo, or full magazine release on
+        command or on a schedule.</li>
+      <li><strong>Self-hosted ground software</strong> — platform server and browser-based operator
+        interface, deployable on customer infrastructure or air-gapped.</li>
+      <li><strong>Integration and engineering services</strong> — program management, systems
+        integration, and test support.</li>
+      <li><strong>Training and sustainment</strong> — operator and maintainer courses, spares, and
+        field service.</li>
+      <li><strong>Domestic, screened supply chain</strong> — components screened against federal
+        covered-entity lists, with documentation maintained.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt" id="team">
+  <div class="wrap">
+    <div class="label">WHO WE ARE</div>
+    <h2>Operators who have run the red side of this fight.</h2>
+    <p class="lede">Protosun Solutions is a service-disabled veteran-owned small business in York,
+      Pennsylvania. Our founding team combines counter-UAS red team experience with enterprise
+      security architecture — we've flown the threat, and we've built the compliance programs.</p>
+
+    <div class="grid g3">
+      <div class="card">
+        <h3>Counter-UAS operations</h3>
+        <p>Roughly seven years running red team support for counter-UAS events — flying, building,
+           and integrating Group 1 through Group 3 platforms across fixed wing, multirotor, and VTOL.</p>
+      </div>
+      <div class="card">
+        <h3>Aviation and airspace</h3>
+        <p>Army aviation leadership, airworthiness release and exception-to-policy processes, and
+           airspace authorization coordination — in house.</p>
+      </div>
+      <div class="card">
+        <h3>Security architecture</h3>
+        <p>Career cybersecurity practitioners including PCI Qualified Security Assessor, CMMC
+           Registered Practitioner, and CISA credentials.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="contact" id="contact">
+  <div class="wrap">
+    <div class="label">CONTACT</div>
+    <h2>Let's talk.</h2>
+    <p class="lede">For capability inquiries, teaming, or demonstration requests.</p>
+
+    <div class="cgrid">
+      <div>
+        <h4>EMAIL</h4>
+        <a href="mailto:michael.potter@protosunsolutions.com">michael.potter@protosunsolutions.com</a>
+      </div>
+      <div>
+        <h4>PHONE</h4>
+        <a href="tel:+12233712140">(223) 371-2140</a>
+      </div>
+      <div>
+        <h4>LOCATION</h4>
+        <p>York, Pennsylvania</p>
+      </div>
+      <div>
+        <h4>ENTITY</h4>
+        <p class="mono">UEI PC6DEE17AS46</p>
+        <p style="margin-top:6px">SDVOSB</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footrow">
+    <div>&copy; 2026 Protosun Solutions LLC. All rights reserved.</div>
+    <div>Service-Disabled Veteran-Owned Small Business &nbsp;·&nbsp; York, Pennsylvania</div>
+  </div>
+</footer>
+
+</body>
+</html>

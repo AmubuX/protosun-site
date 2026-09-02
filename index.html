@@ -34,9 +34,11 @@
 
   /* hero */
   .hero{background:var(--ink);color:#fff;padding:96px 0 104px;position:relative;overflow:hidden}
-  .hero::after{content:"";position:absolute;right:-140px;top:-160px;width:520px;height:520px;
-    border-radius:50%;background:var(--mid);opacity:.32}
-  .hero-inner{position:relative;z-index:2;max-width:720px}
+  .hero::after{content:"";position:absolute;right:-190px;top:-170px;width:560px;height:560px;
+    border-radius:50%;background:var(--mid);opacity:.22}
+  .hero-mark{position:absolute;right:7%;top:50%;transform:translateY(-50%);
+    width:min(320px,27vw);opacity:.92;z-index:1;pointer-events:none}
+  .hero-inner{position:relative;z-index:2;max-width:660px}
   .eyebrow{color:var(--gold);font-size:.76rem;font-weight:700;letter-spacing:.22em;margin-bottom:20px}
   .hero h1{color:#fff;font-size:clamp(2.2rem,5.2vw,3.5rem);margin-bottom:24px}
   .hero h1 em{color:var(--gold);font-style:normal}
@@ -90,6 +92,10 @@
   footer{background:#06101f;color:var(--mute);padding:30px 0;font-size:.8rem}
   .footrow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
+  @media(max-width:900px){
+    .hero-mark{display:none}
+    .hero-inner{max-width:100%}
+  }
   @media(max-width:640px){
     nav{display:none}
     .hero{padding:64px 0 72px}
@@ -112,6 +118,7 @@
 </header>
 
 <div class="hero">
+  <img src="mark-light.png" alt="" class="hero-mark" aria-hidden="true">
   <div class="wrap hero-inner">
     <div class="eyebrow">COUNTER-UAS THREAT EMULATION</div>
     <h1>Something <em>to shoot at.</em></h1>
@@ -286,7 +293,10 @@
 
 <footer>
   <div class="wrap footrow">
-    <div>&copy; 2026 Protosun Solutions LLC. All rights reserved.</div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="mark-light.png" alt="Protosun Solutions" style="height:26px;width:auto;opacity:.85">
+      <span>&copy; 2026 Protosun Solutions LLC. All rights reserved.</span>
+    </div>
     <div>Service-Disabled Veteran-Owned Small Business &nbsp;·&nbsp; York, Pennsylvania</div>
   </div>
 </footer>
